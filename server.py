@@ -1,5 +1,5 @@
 # server.py
-# Web frontend and API for JimmySims
+# Web frontend and API for IrvingFisher
 # Run this on your always-on Windows machine alongside ngrok
 
 import os
@@ -12,7 +12,7 @@ load_dotenv()
 
 app = Flask(__name__)
 # Secret key for session/cookies
-app.secret_key = os.getenv("FLASK_SECRET_KEY", "super-secret-jimmy-key")
+app.secret_key = os.getenv("FLASK_SECRET_KEY", "super-secret-fish-key")
 
 API_TOKEN = os.getenv("JIMMY_API_TOKEN")
 
@@ -32,7 +32,7 @@ HTML_TEMPLATE = """
 <html>
 <head>
     <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
-    <title>JimmySims AI</title>
+    <title>IrvingFisher AI</title>
     <style>
         body { font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial; background: #0f172a; color: #f8fafc; margin: 0; padding: 0; display: flex; flex-direction: column; height: 100vh; }
         .header { background: #1e293b; padding: 15px; text-align: center; border-bottom: 1px solid #334155; font-weight: bold; }
@@ -48,13 +48,13 @@ HTML_TEMPLATE = """
     </style>
 </head>
 <body>
-    <div class="header">JimmySims Agent</div>
+    <div class="header">IrvingFisher Agent</div>
 
     {% if not logged_in %}
     <!-- Login Screen -->
     <div class="login-box">
         <h3>Enter Passcode</h3>
-        <p>Ask Jimmy via Powershell for the dynamic mobile passcode.</p>
+        <p>Ask Fish via Powershell for the dynamic mobile passcode.</p>
         <form method="POST" action="/mobile_login">
             <input type="text" name="passcode" placeholder="Passcode" required autocomplete="off">
             <button type="submit">Unlock</button>
@@ -68,7 +68,7 @@ HTML_TEMPLATE = """
         {% endfor %}
     </div>
     <form class="input-area" onsubmit="sendMessage(event)">
-        <input type="text" id="userInput" placeholder="Message Jimmy..." autocomplete="off">
+        <input type="text" id="userInput" placeholder="Message Fish..." autocomplete="off">
         <button type="submit">Send</button>
     </form>
     <script>
@@ -177,6 +177,6 @@ def cli_chat():
 
 
 if __name__ == "__main__":
-    print("[SYSTEM] Starting JimmySims Server...")
+    print("[SYSTEM] Starting IrvingFisher Server...")
     # debug=False since standard debugger breaks Anthropic loops occasionally with threads
     app.run(host="0.0.0.0", port=5000, debug=False)

@@ -49,7 +49,7 @@ def send_message(user_msg: str) -> str:
     while True:
         try:
             response = client.messages.create(
-                model="claude-3-5-sonnet-20240620",
+                model="claude-sonnet-4-6",
                 max_tokens=4096,
                 system=get_system_prompt(),
                 messages=global_state.get_history(),

@@ -17,7 +17,10 @@ def load_prompt(filename: str) -> str:
 
 
 def get_system_prompt() -> str:
-    """Assembles the full system prompt for Jimmy."""
-    system = load_prompt("system.md")
-    factset = load_prompt("factset_excel.md")
-    return f"{system}\n\n{factset}"
+    """Assembles the full system prompt for Fish."""
+    return "\n\n".join([
+        load_prompt("system.md"),
+        load_prompt("dcf_methodology.md"),
+        load_prompt("industry_knowledge.md"),
+        load_prompt("factset_excel.md"),
+    ])

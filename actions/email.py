@@ -43,7 +43,7 @@ def send_email(to: str, subject: str, file_path: str) -> dict:
         msg["From"] = GMAIL_ADDRESS
         msg["To"] = to
         msg["Subject"] = subject
-        msg.attach(MIMEText("See attached output from JimmySims.", "plain"))
+        msg.attach(MIMEText("See attached output from IrvingFisher.", "plain"))
 
         # Attach file
         filename = Path(file_path).name
