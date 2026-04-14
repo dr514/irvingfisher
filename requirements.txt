@@ -1,0 +1,17 @@
+# Boilerplate requirements
+# requirements.txt
+
+# Anthropic API
+anthropic
+
+# Local server
+flask
+
+# Excel / COM automation
+pywin32
+
+# Email
+secure-smtplib
+
+# Environment variables
+python-dotenv
